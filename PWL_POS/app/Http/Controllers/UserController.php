@@ -11,22 +11,27 @@ class UserController extends Controller
     public function index()
     {
         // $data = [
-        //     'username' => 'customer-1',
+        //     'username' => 'lia12',
         //     'nama' => 'Pelanggan',
         //     'password' => Hash::make('12345'),
-        //     'level_id' => 4
+        //     'level_id' => 3,
         // ];
 
         // UserModel::insert($data);
 
+        // $user = UserModel::all();
+        // return view('user', ['data' => $user]);
+
         $data = [
-            'nama' => 'pelanggan pertama',
+            'nama' => 'pelanggan kedua',
         ];
 
-        UserModel::wherre('username', 'customer-1')->update($data);
+        UserModel::where('username', 'customer2')->update($data);
 
         $user = UserModel::all();
         return view('user', ['data' => $user]);
+
+
     }
 
 }
